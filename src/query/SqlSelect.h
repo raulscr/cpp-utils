@@ -3,9 +3,9 @@
 
 #include "SqlClause.h"
 
-class Select : Clause {
+class Select : public Clause {
 public:
-    operator std::string() const;
+    virtual operator std::string() const;
 };
 
 #endif // CPPUTILS_QUERY_SQLSELECT_H_
