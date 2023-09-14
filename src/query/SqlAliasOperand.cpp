@@ -4,5 +4,5 @@ AliasOperand::AliasOperand(const std::string& name, const std::string& alias) : 
 {}
 
 AliasOperand::operator std::string() const {
-    return " AliasOperand ";
+    return _name + (_alias.empty() ? " " : (_alias + " "));
 }

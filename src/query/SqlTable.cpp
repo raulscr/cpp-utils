@@ -4,5 +4,5 @@ Table::Table(const std::string& name, const std::string& alias) : AliasOperand(n
 {}
 
 Table::operator std::string() const {
-    return _name + _alias + " ";
+    return _name + (_alias.empty() ? " " : (_alias + " "));
 }
