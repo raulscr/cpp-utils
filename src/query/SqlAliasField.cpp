@@ -7,5 +7,5 @@ AliasField::AliasField(const std::string& name, const std::string& alias) : Alia
 {}
 
 AliasField::operator std::string() const {
-    return _name + (_alias.empty() ? " " : (" AS " + _alias + " "));
+    return " " + _name + (_alias.empty() ? "" : (" AS " + _alias));
 }
