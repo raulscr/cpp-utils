@@ -5,7 +5,7 @@
 
 class Table : public AliasOperand {
 public:
-    explicit Table(const std::string& name, const std::string& alias = "");
+    Table(const std::string& name = "", const std::string& alias = "");
     virtual operator std::string() const override;
 };
 
