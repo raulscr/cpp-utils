@@ -7,8 +7,8 @@
 
 class AliasField : public AliasOperand {
 public:
-    explicit AliasField(const std::string& name, const std::string& alias = "");
-    explicit AliasField(const std::pair<std::string, std::string>& other);
+    AliasField(const std::string& name, const std::string& alias = "");
+    AliasField(const std::pair<std::string, std::string>& other);
     virtual operator std::string() const override;
 };
 
