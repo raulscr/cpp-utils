@@ -1,6 +1,9 @@
 
 set(SOURCES
+    SqlTable.cpp
     SqlSelect.cpp
+    SqlAliasField.cpp
+    SqlAliasOperand.cpp
 )
 
 add_library(query ${SOURCES})
