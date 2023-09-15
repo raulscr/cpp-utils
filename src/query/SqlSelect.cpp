@@ -6,7 +6,7 @@ Select::operator std::string() const {
     for (int i = 0; i < _fields.size(); i++) {
         query += _fields[i];
         if (i < _fields.size() - 1) {
-            query += ", ";
+            query += ",";
         }
     }
 
