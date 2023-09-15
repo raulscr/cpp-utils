@@ -31,3 +31,14 @@ BOOST_AUTO_TEST_CASE(SelectWithFieldsQueryTest){
 
     BOOST_CHECK_EQUAL(expected_query, actual_query);
 }
+
+BOOST_AUTO_TEST_CASE(SelectWithSimpleConditionQueryTest){
+    const std::string expected_query = "SELECT * FROM test_table WHERE TRUE;";
+
+    const std::string actual_query =
+      Select({ { "*" } })
+      .From("test_table")
+      .Where(Condition("TRUE"));
+
+    BOOST_CHECK_EQUAL(expected_query, actual_query);
+}
