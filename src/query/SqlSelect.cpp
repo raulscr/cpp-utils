@@ -14,6 +14,11 @@ Select::operator std::string() const {
     query += _table;
     // or maybe not, user problems...
 
+    if (_conditions.Validate()) {
+        query += " WHERE";
+        query += _conditions;
+    }
+
     query += ";";
     return query;
 }
@@ -28,5 +33,10 @@ Select& Select::From(const std::string& table){
 
 Select& Select::From(const Table& table){
     _table = table;
+    return *this;
+}
+
+Select &Select::Where(const Conditions &conditions){
+    _conditions = conditions;
     return *this;
 }

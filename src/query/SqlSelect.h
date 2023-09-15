@@ -7,6 +7,7 @@
 #include "SqlClause.h"
 #include "SqlAliasField.h"
 #include "SqlTable.h"
+#include "SqlConditions.h"
 
 class Select : public Clause {
 public:
@@ -15,10 +16,12 @@ public:
 
     Select& From(const std::string& table);
     Select& From(const Table& table);
+    Select& Where(const Conditions& conditions);
 
 private:
     std::vector<AliasField> _fields;
     Table _table;
+    Conditions _conditions;
 };
 
 #endif // CPPUTILS_QUERY_SQLSELECT_H_
