@@ -2,6 +2,7 @@
 set(SOURCES
     SqlTable.cpp
     SqlSelect.cpp
+    SqlCondition.cpp
     SqlAliasField.cpp
     SqlAliasOperand.cpp
 )
