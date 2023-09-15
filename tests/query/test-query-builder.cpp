@@ -42,3 +42,25 @@ BOOST_AUTO_TEST_CASE(SelectWithSimpleConditionQueryTest){
 
     BOOST_CHECK_EQUAL(expected_query, actual_query);
 }
+
+BOOST_AUTO_TEST_CASE(SelectWithEqualConditionQueryTest){
+    const std::string expected_query = "SELECT * FROM test_table WHERE field = 'TESTE';";
+
+    const std::string actual_query =
+      Select({ { "*" } })
+      .From("test_table")
+      .Where(Condition("field").IsEqual("TESTE"));
+
+    BOOST_CHECK_EQUAL(expected_query, actual_query);
+}
+
+BOOST_AUTO_TEST_CASE(SelectWithNullConditionQueryTest){
+    const std::string expected_query = "SELECT * FROM test_table WHERE field IS NULL;";
+
+    const std::string actual_query =
+      Select({ { "*" } })
+      .From("test_table")
+      .Where(Condition("field").IsNull());
+
+    BOOST_CHECK_EQUAL(expected_query, actual_query);
+}
