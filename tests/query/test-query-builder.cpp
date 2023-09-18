@@ -49,7 +49,7 @@ BOOST_AUTO_TEST_CASE(SelectWithEqualConditionQueryTest){
     const std::string actual_query =
       Select({ { "*" } })
       .From("test_table")
-      .Where(Condition("field").IsEqual("TESTE"));
+      .Where(Condition("field").Equal("TESTE"));
 
     BOOST_CHECK_EQUAL(expected_query, actual_query);
 }
