@@ -14,7 +14,7 @@ public:
 
     // virtual operator std::string() const override;
 
-    bool Validate() const override;
+    bool IsValid() const override;
 
 private:
     std::vector<Condition> _conditions;

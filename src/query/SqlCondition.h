@@ -24,7 +24,7 @@ public:
     Condition(const std::string& value = "");
     virtual operator std::string() const;
 
-    virtual bool Validate() const;
+    virtual bool IsValid() const;
 
     Condition& IsEqual(const std::string& other);
     Condition& IsNull();

@@ -14,7 +14,7 @@ Condition::operator std::string() const {
     return " " + _first_value;
 }
 
-bool Condition::Validate() const {
+bool Condition::IsValid() const {
     return !_first_value.empty();
 }
 

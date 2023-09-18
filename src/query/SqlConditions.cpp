@@ -14,6 +14,6 @@ Conditions::Conditions(const Conditions &conditions) :
     _conditions{conditions}{
 }
 
-bool Conditions::Validate() const {
-    return Condition::Validate();
+bool Conditions::IsValid() const {
+    return Condition::IsValid();
 }
