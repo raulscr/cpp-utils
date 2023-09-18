@@ -14,7 +14,7 @@ Select::operator std::string() const {
     query += _table;
     // or maybe not, user problems...
 
-    if (_conditions.Validate()) {
+    if (_conditions.IsValid()) {
         query += " WHERE";
         query += _conditions;
     }
