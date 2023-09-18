@@ -26,7 +26,7 @@ public:
 
     virtual bool IsValid() const;
 
-    Condition& IsEqual(const std::string& other);
+    Condition& Equal(const std::string& other);
     Condition& IsNull();
 
 protected:

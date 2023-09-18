@@ -18,7 +18,7 @@ bool Condition::IsValid() const {
     return !_first_value.empty();
 }
 
-Condition& Condition::IsEqual(const std::string& other){
+Condition& Condition::Equal(const std::string& other){
     // TODO
     return *this;
 }
