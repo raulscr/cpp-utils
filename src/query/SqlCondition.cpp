@@ -19,7 +19,8 @@ bool Condition::IsValid() const {
 }
 
 Condition& Condition::Equal(const std::string& other){
-    // TODO
+    _operator     = Operator::EQUAL;
+    _second_value = other;
     return *this;
 }
 
@@ -30,7 +31,8 @@ Condition& Condition::NotEqual(const std::string& other){
 }
 
 Condition& Condition::IsNull(){
-    // TODO
+    _operator     = Operator::IS;
+    _second_value = "NULL";
     return *this;
 }
 
