@@ -23,7 +23,19 @@ Condition& Condition::Equal(const std::string& other){
     return *this;
 }
 
+Condition& Condition::NotEqual(const std::string& other){
+    _operator     = Operator::NOT_EQUAL;
+    _second_value = other;
+    return *this;
+}
+
 Condition& Condition::IsNull(){
     // TODO
+    return *this;
+}
+
+Condition& Condition::IsNotNull(){
+    _operator     = Operator::IS_NOT;
+    _second_value = "NULL";
     return *this;
 }

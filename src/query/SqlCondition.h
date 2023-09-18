@@ -27,7 +27,10 @@ public:
     virtual bool IsValid() const;
 
     Condition& Equal(const std::string& other);
+    Condition& NotEqual(const std::string& other);
+
     Condition& IsNull();
+    Condition& IsNotNull();
 
 protected:
     Operator _operator;
