@@ -12,8 +12,42 @@ Condition::Condition(const std::string &value) :
 }
 
 Condition::operator std::string() const {
-    // TODO: implement how to diff operators
-    return " " + _first_value;
+    std::string query = " " + _first_value;
+
+    switch (_operator) {
+        case IS:
+            query += " IS " + _second_value;
+            break;
+        case IS_NOT:
+            query += " IS NOT " + _second_value;
+            break;
+        case LIKE:
+            query += " LIKE " + _second_value;
+            break;
+        case EQUAL:
+            query += " = " + _second_value;
+            break;
+        case NOT_EQUAL:
+            query += " <> " + _second_value;
+            break;
+        case LESS_THAN:
+            query += " < " + _second_value;
+            break;
+        case LESS_EQUAL:
+            query += " <= " + _second_value;
+            break;
+        case GREATER_THAN:
+            query += " > " + _second_value;
+            break;
+        case GREATER_EQUAL:
+            query += " >= " + _second_value;
+            break;
+        default:
+            // NOTE: INVALID_OPERATOR handled here (do nothing)
+            break;
+    }
+
+    return query;
 }
 
 bool Condition::IsValid() const {
