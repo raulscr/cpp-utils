@@ -1,7 +1,7 @@
 #include "SqlCondition.h"
 
 Condition::Condition(const Condition &other) :
-    _operator{INVALID_OPERATOR},
+    _operator{other._operator},
     _first_value{other._first_value},
     _second_value{other._second_value}{
 }
