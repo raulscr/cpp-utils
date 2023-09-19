@@ -7,19 +7,6 @@
 
 class Condition : public Clause {
 public:
-    enum Operator {
-        INVALID_OPERATOR = -1,
-        IS,
-        IS_NOT,
-        LIKE,
-        EQUAL,
-        NOT_EQUAL,
-        LESS_THAN,
-        LESS_EQUAL,
-        GREATER_THAN,
-        GREATER_EQUAL,
-        // TODO: investigate possible operators and implement them
-    };
 
     explicit Condition(const Condition& other);
     Condition(const std::string& value = "");
@@ -34,10 +21,26 @@ public:
     Condition& IsNotNull();
 
 protected:
-    Operator _operator;
     // TODO: use SqlValue (not implemented yet)
     std::string _first_value;
     std::string _second_value;
+
+private:
+    enum Operator {
+        INVALID_OPERATOR = -1,
+        IS,
+        IS_NOT,
+        LIKE,
+        EQUAL,
+        NOT_EQUAL,
+        LESS_THAN,
+        LESS_EQUAL,
+        GREATER_THAN,
+        GREATER_EQUAL,
+        // TODO: investigate possible operators and implement them
+    };
+
+    Operator _operator;
 };
 
 #endif // CPPUTILS_QUERY_SQLCONDITION_H_
