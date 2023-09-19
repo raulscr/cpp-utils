@@ -1,11 +1,13 @@
 #include "SqlCondition.h"
 
 Condition::Condition(const Condition &other) :
+    _operator{INVALID_OPERATOR},
     _first_value{other._first_value},
     _second_value{other._second_value}{
 }
 
 Condition::Condition(const std::string &value) :
+    _operator{INVALID_OPERATOR},
     _first_value{value}{
 }
 

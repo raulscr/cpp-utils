@@ -8,6 +8,7 @@
 class Condition : public Clause {
 public:
     enum Operator {
+        INVALID_OPERATOR = -1,
         IS,
         IS_NOT,
         LIKE,
